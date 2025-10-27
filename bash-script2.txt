@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <target_directory>"
+    exit 1
+fi
+
+TARGET_DIR="$1"
+
+gnome-terminal -- bash -c "./cleanup.sh \"$TARGET_DIR\"; echo 'Press Enter to close this window...'; read"
