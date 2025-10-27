@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <target_directory>"
+    exit 1
+fi
+
+TARGET_DIR="$1"
+
+echo "Removing empty files in $TARGET_DIR..."
+find "$TARGET_DIR" -type f -empty -delete
+
+echo "Removing empty directories in $TARGET_DIR..."
+find "$TARGET_DIR" -type d -empty -delete
+
+echo "Cleanup completed."
+
